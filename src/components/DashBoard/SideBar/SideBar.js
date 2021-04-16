@@ -49,11 +49,11 @@ const SideBar = () => {
 
             </ul>
             <div>
-                <Link to="/" className="text-white"><FontAwesomeIcon icon={faArrowCircleLeft} /> <span>Back to Home</span></Link>
+                <Link to="/home" className="text-white"><FontAwesomeIcon icon={faArrowCircleLeft} /> <span>Back to Home</span></Link>
             </div>
             <br></br>
             <div>
-                <Link to="/" onClick={() => console.log("sfddssfd")} className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
+                <Link to="/home" onClick={() => setLoggedInUser({})} className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
             </div>
         </div>
     );

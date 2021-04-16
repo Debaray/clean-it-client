@@ -1,7 +1,8 @@
 import React from 'react';
 import NavBar from '../../Shared/NavBar/NavBar';
 import SideBar from '../SideBar/SideBar';
-const OrderList = () => {
+
+const AddService = () => {
     return (
         <div>
             <NavBar></NavBar>
@@ -10,11 +11,11 @@ const OrderList = () => {
                     <SideBar></SideBar>
                 </div>
                 <div className="col-lg-9">
-                    <h1>This is OrderList</h1>
+                    <h1>This is AddService</h1>
                 </div>
             </div>
         </div>
     );
 };
 
-export default OrderList;
+export default AddService;
