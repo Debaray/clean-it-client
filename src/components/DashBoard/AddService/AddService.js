@@ -6,14 +6,11 @@ const AddService = () => {
     const [serviceData, setServiceData] = useState({});
     const [file, setFile] = useState(null);
     const handleSubmit = e => {
-        console.log(serviceData);
-
         const formData = new FormData()
-        console.log(serviceData);
         formData.append('file', file);
         formData.append('serviceTitle', serviceData.serviceTitle);
         formData.append('description', serviceData.description);
-        console.log(formData);
+        
         const url = `http://localhost:5000/addAService`;
 
         fetch(url, {
@@ -30,7 +27,7 @@ const AddService = () => {
 
     }
     const handleProductImageChange = event => {
-        //setShowSpin(false);
+        
         const newFile = event.target.files[0];
         setFile(newFile);
     }
