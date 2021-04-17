@@ -4,7 +4,7 @@ import laundryPicture from '../../../images/laundryServiceHeader.jpg';
 import './HeaderMain.css';
 const HeaderMain = () => {
     return (
-        <main className=" bg-light row d-flex align-items-center justify-content-center headerMain-container mb-3">
+        <main className=" bg-light row d-flex align-items-center justify-content-center headerMain-container mb-5">
             <div className="col-5 offset-1">
                 <h1 className="text-black">Want to get your <br /> Cloth Cleaned? <span className="text-primary">Quickly</span></h1>
                 <hr/>

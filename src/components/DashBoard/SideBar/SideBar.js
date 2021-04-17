@@ -48,11 +48,9 @@ const SideBar = () => {
                 </li>
 
             </ul>
-            <div>
+            <div className="">
                 <Link to="/home" className="text-white"><FontAwesomeIcon icon={faArrowCircleLeft} /> <span>Back to Home</span></Link>
-            </div>
-            <br></br>
-            <div>
+                <br/>
                 <Link to="/home" onClick={() => setLoggedInUser({})} className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
             </div>
         </div>

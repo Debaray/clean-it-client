@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NavBar from '../../Shared/NavBar/NavBar';
 import SideBar from '../SideBar/SideBar';
 import Button from 'react-bootstrap/Button';
+import './AddService.css';
 const AddService = () => {
     const [serviceData, setServiceData] = useState({
         serviceTitle: 'Dry Cleaning',
@@ -10,7 +11,9 @@ const AddService = () => {
         pantsJeansSkirts: 2.50,
         sweaters: 6.50,
         tieScarf: 5.50,
-        coatHeavyJacketDress: 10.50
+        coatHeavyJacketDress: 10.50,
+        silkSuedeLeathers: 20.50,
+        curtainsDrapery:40.50
     });
     const [file, setFile] = useState(null);
     const handleSubmit = e => {
@@ -23,6 +26,8 @@ const AddService = () => {
         formData.append('sweaters', serviceData.sweaters);
         formData.append('tieScarf', serviceData.tieScarf);
         formData.append('coatHeavyJacketDress', serviceData.coatHeavyJacketDress);
+        formData.append('silkSuedeLeathers', serviceData.silkSuedeLeathers);
+        formData.append('curtainsDrapery', serviceData.curtainsDrapery);
 
         const url = `http://localhost:5000/addAService`;
 
@@ -38,8 +43,8 @@ const AddService = () => {
                 console.error(error)
             })
 
-    e.preventDefault();
-    document.getElementById('formId').reset();
+        e.preventDefault();
+        document.getElementById('formId').reset();
 
     }
     const handleProductImageChange = event => {
@@ -64,6 +69,12 @@ const AddService = () => {
         else if (event.target.name === 'coatHeavyJacketDress') {
             newServiceData[event.target.name] = Number(event.target.value.trim()) || 10.50;
         }
+        else if (event.target.name === 'silkSuedeLeathers') {
+            newServiceData[event.target.name] = Number(event.target.value.trim()) || 20.50;
+        }
+        else if (event.target.name === 'curtainsDrapery') {
+            newServiceData[event.target.name] = Number(event.target.value.trim()) || 40.50;
+        }
         else {
             newServiceData[event.target.name] = event.target.value.trim();
         }
@@ -79,22 +90,22 @@ const AddService = () => {
                 </div>
                 <div className="col-lg-9">
                     <h3 className="mt-2">Add Service</h3>
-                    <form id="formId"className="mt-3 form-style" onSubmit={handleSubmit}>
+                    <form id="formId" className="mt-3 form-style mb-5" onSubmit={handleSubmit}>
                         <div>
                             <div className="row">
-                                <label className="col-sm-12 col-md-6 col-lg-6">
+                                <label className="col-sm-12 col-md-6 col-lg-6 text-thickness">
                                     Service Title
                                 <hr></hr>
                                     <input className="col-sm-12 col-md-10 col-lg-10" name="serviceTitle" required placeholder="Dry Cleaning" type="text" onChange={handleServicePropertyChange} />
                                 </label>
-                                <label className="col-sm-12 col-md-6 col-lg-6">
+                                <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Upload Image
                                     <hr></hr>
                                     <input className="col-sm-12 col-md-10 col-lg-10" required type="file" onChange={handleProductImageChange} />
                                 </label>
                             </div>
                             <div className="row mt-2">
-                                <label className="col-sm-12 col-md-6 col-lg-6">
+                                <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Description
                                     <hr></hr>
                                     <textarea className="col-sm-12 col-md-10 col-lg-10" name="description" required placeholder="Oil stains are stubborn and may not be entirely possible to remove by water.  Synthetic fibers like polyester respond well to only dry cleaning." rows="4" type="text" onChange={handleServicePropertyChange} />
@@ -104,34 +115,44 @@ const AddService = () => {
                         <div>
                             <h3 className="mt-2">Pricing for Service</h3>
                             <div className="row">
-                                <label className="col-sm-12 col-md-6 col-lg-6">
+                                <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     All Shirts
                                 <hr></hr>
                                     <input className="col-sm-12 col-md-10 col-lg-10" name="allShirts" required placeholder="1.50$" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
-                                <label className="col-sm-12 col-md-6 col-lg-6">
+                                <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Pants, Jeans, Skirts
                                 <hr></hr>
-                                    <input className="col-sm-12 col-md-10 col-lg-10" name="pantsJeansSkirts"  required placeholder="2.50$" step=".01" type="number" onChange={handleServicePropertyChange} />
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="pantsJeansSkirts" required placeholder="2.50$" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
-                                <label className="col-sm-12 col-md-6 col-lg-6">
+                                <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Sweaters
                                 <hr></hr>
                                     <input className="col-sm-12 col-md-10 col-lg-10" name="sweaters" required placeholder="6.50$" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
-                                <label className="col-sm-12 col-md-6 col-lg-6">
+                                <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Tie, Scarf
                                 <hr></hr>
-                                    <input className="col-sm-12 col-md-10 col-lg-10" name="tieScarf" required  placeholder="5.50$" step=".01" type="number" onChange={handleServicePropertyChange} />
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="tieScarf" required placeholder="5.50$" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
-                                <label className="col-sm-12 col-md-6 col-lg-6">
+                                <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Coat, Heavy Jacket, Dress
                                 <hr></hr>
                                     <input className="col-sm-12 col-md-10 col-lg-10" name="coatHeavyJacketDress" placeholder="10.50$" required step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
+                                <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
+                                    Silk, Suede ,Leathers
+                                <hr></hr>
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="silkSuedeLeathers" placeholder="20.50$" required step=".01" type="number" onChange={handleServicePropertyChange} />
+                                </label>
+                                <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
+                                Curtains and Drapery
+                                <hr></hr>
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="curtainsDrapery" placeholder="40.50$" required step=".01" type="number" onChange={handleServicePropertyChange} />
+                                </label>
                             </div>
                         </div>
-                        <Button variant="primary" as="input" type="submit" value="Save" className="pt-2 pb-2" block />
+                        <Button variant="primary" as="input" type="submit" value="Save" className="pt-2 pb-2 mt-1" block />
                     </form>
                 </div>
             </div>
