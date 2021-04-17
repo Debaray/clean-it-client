@@ -48,7 +48,7 @@ const AddService = () => {
                 </div>
                 <div className="col-lg-9">
                     <h3 className="mt-2">Add Service</h3>
-                    <form className="mt-3 form-style" onSubmit={handleSubmit}>
+                    <form className="mt-3 form-style">
                         <div className="row">
                             <label htmlFor="productName" className="col-sm-12 col-md-6 col-lg-6">
                                 Service Title
@@ -69,7 +69,7 @@ const AddService = () => {
                                 <textarea className="col-sm-12 col-md-10 col-lg-10" name="description" placeholder="Oil stains are stubborn and may not be entirely possible to remove by water.  Synthetic fibers like polyester respond well to only dry cleaning." rows="4" type="text" onChange={handleServicePropertyChange} />
                             </label>
                         </div>
-                        <Button variant="primary" as="input" type="submit" value="Save" className="pt-2 pb-2" block onClick={handleSubmit} />
+                        <Button variant="primary" as="input" type="reset" value="Save" className="pt-2 pb-2" block onClick={handleSubmit} />
                     </form>
                 </div>
             </div>
