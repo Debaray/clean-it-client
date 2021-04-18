@@ -21,7 +21,7 @@ const Service = () => {
             {showSpin && <div >
                 <div className="mt-5 row d-flex justify-content-center">
                     {
-                        servicesData.map(sData => <ServiceInfo key={sData.id} service={sData}></ServiceInfo>)
+                        servicesData.map(sData => <ServiceInfo key={sData._id} service={sData}></ServiceInfo>)
                     }
                 </div>
             </div>}

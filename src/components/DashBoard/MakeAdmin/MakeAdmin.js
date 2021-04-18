@@ -15,12 +15,20 @@ const MakeAdmin = () => {
             },
             body: JSON.stringify(adminData)
         })
-            .then(res => console.log('server side response', res))
+            .then(res => {
+                console.log('server side response', res)
+                alert('Congratulations!Admin added successfully.');
+            })
+            .catch(error => {
+                console.error(error)
+            })
+            e.preventDefault();
+            document.getElementById('formId').reset();
     }
     const handleServicePropertyChange = event => {
         const newAdminData = { ...adminData };
         newAdminData[event.target.name] = event.target.value.trim();
-        newAdminData.role = 'Super Admin';
+        newAdminData.role = 'Admin';
         setAdminData(newAdminData);
     }
     return (
@@ -32,14 +40,14 @@ const MakeAdmin = () => {
                 </div>
                 <div className="col-lg-9 col-md-9">
                     <h3 className="mt-2">Make Admin</h3>
-                    <form className="mt-3 form-style">
+                    <form id="formId" className="mt-3 form-style" onSubmit={handleSubmit}>
                         <div className="row">
                             <label className="col-sm-12 col-md-9 col-lg-9">
                                 Email
                                 <hr></hr>
                                 <div className="row">
-                                    <input className="col-sm-12 col-md-12 col-lg-7" name="email" placeholder="abc@example.com" type="email" onChange={handleServicePropertyChange} />
-                                    <Button className="col-sm-12 col-md-12 col-lg-4 ml-lg-2 mt-md-2 mt-sm-2 mt-lg-0" variant="primary" as="input" type="reset" value="Save" onClick={handleSubmit} />
+                                    <input className="col-sm-12 col-md-12 col-lg-7" name="email" placeholder="abc@example.com" required type="email" onChange={handleServicePropertyChange} />
+                                    <Button className="col-sm-12 col-md-12 col-lg-4 ml-lg-2 mt-md-2 mt-sm-2 mt-lg-0" variant="primary" as="input" type="submit" value="Save" onClick={handleSubmit} />
                                 </div>
 
                             </label>
