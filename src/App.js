@@ -23,66 +23,67 @@ import MakeAdmin from './components/DashBoard/MakeAdmin/MakeAdmin';
 import ManageServices from './components/DashBoard/ManageServices/ManageServices';
 import NotFound from './components/NotFound/NotFound';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
-  const [selectService, setSelectService]= useState({});
+  const [selectService, setSelectService] = useState({});
   return (
-    <UserContext.Provider value={{ loggedUser:[loggedInUser, setLoggedInUser], selectedService: [selectService, setSelectService]}}>
+    <UserContext.Provider value={{ loggedUser: [loggedInUser, setLoggedInUser], selectedService: [selectService, setSelectService] }}>
       <Router>
-      <Switch>
-      <Route path="/home">
-        <Home></Home>
-      </Route>
-        <Route path="/aboutUs">
-        <AboutUs></AboutUs>
-      </Route>
-      <Route path="/contactUs">
-        <ContactUs></ContactUs>
-      </Route>
-      <Route path="/services">
-        <Services></Services>
-      </Route>
-      <Route path="/pricing">
-       <Pricing></Pricing>
-      </Route>
-      <Route path="/userDashBoard">
-        <DashBoard></DashBoard>
-      </Route>
-      <Route path="/admin">
-        <Admin></Admin>
-      </Route>
-      <Route path="/login">
-        <Login></Login>
-      </Route>
-      <Route path="/bookService">
-        <BookService></BookService>
-      </Route>
-      <Route path="/bookingList">
-        <BookingList></BookingList>
-      </Route>
-      <Route path="/review">
-        <Review></Review>
-      </Route>
-      <Route path="/orderList">
-        <OrderList></OrderList>
-      </Route>
-      <Route path="/addService">
-        <AddService></AddService>
-      </Route>
-      <Route path="/makeAdmin">
-        <MakeAdmin></MakeAdmin>
-      </Route>
-      <Route path="/manageServices">
-        <ManageServices></ManageServices>
-      </Route>
-      <Route exact path="/">
-        <Home></Home>
-      </Route>
-      <Route path="*">
+        <Switch>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/aboutUs">
+            <AboutUs></AboutUs>
+          </Route>
+          <Route path="/contactUs">
+            <ContactUs></ContactUs>
+          </Route>
+          <Route path="/services">
+            <Services></Services>
+          </Route>
+          <Route path="/pricing">
+            <Pricing></Pricing>
+          </Route>
+          <PrivateRoute path="/userDashBoard">
+            <DashBoard></DashBoard>
+          </PrivateRoute>
+          <PrivateRoute path="/admin">
+            <DashBoard></DashBoard>
+          </PrivateRoute>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <PrivateRoute path="/bookService">
+            <BookService></BookService>
+          </PrivateRoute>
+          <PrivateRoute path="/bookingList">
+            <BookingList></BookingList>
+          </PrivateRoute>
+          <PrivateRoute path="/review">
+            <Review></Review>
+          </PrivateRoute>
+          <PrivateRoute path="/orderList">
+            <OrderList></OrderList>
+          </PrivateRoute>
+          <PrivateRoute path="/addService">
+            <AddService></AddService>
+          </PrivateRoute>
+          <PrivateRoute path="/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </PrivateRoute>
+          <PrivateRoute path="/manageServices">
+            <ManageServices></ManageServices>
+          </PrivateRoute>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="*">
             <NotFound></NotFound>
           </Route>
-      </Switch>
+        </Switch>
 
 
       </Router>

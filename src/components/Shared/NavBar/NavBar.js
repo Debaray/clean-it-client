@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext,useState ,useEffect} from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { UserContext } from '../../../App';
@@ -10,10 +10,20 @@ const NavBar = () => {
     const { loggedUser, selectedService } = useContext(UserContext);
     const [loggedInUser, setLoggedInUser] = loggedUser;
     const [selectService, setSelectService] = selectedService;
+    const [isAdmin, setIsAdmin] = useState(false);
+    useEffect(() => {
+        fetch('http://localhost:5000/isAdmin', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setIsAdmin(data));
+    }, [])
     return (
         <div>
-           <Navbar className="m-0" collapseOnSelect expand="lg" bg="light" variant="light">
-                    <Navbar.Brand className="header-style">Grocery Daily</Navbar.Brand>
+           {!isAdmin && <Navbar className="m-0" collapseOnSelect expand="lg" bg="light" variant="light">
+                    <Navbar.Brand className="header-style">Clean It</Navbar.Brand>
                     {
                         loggedInUser.email ? <h4 className="text-center mt-2 ml-5">{loggedInUser.name}</h4> :
                             <></>
@@ -35,7 +45,7 @@ const NavBar = () => {
 
                         </Nav>
                     </Navbar.Collapse>
-                </Navbar>
+                </Navbar>}
         </div>
     );
 };
