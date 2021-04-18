@@ -4,3 +4,6 @@
 .link-style{
     text-decoration: none !important;
 }
+.card-style:hover{
+    transform: scale(1.2);
+}
