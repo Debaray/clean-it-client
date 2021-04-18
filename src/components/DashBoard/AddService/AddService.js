@@ -3,7 +3,6 @@ import NavBar from '../../Shared/NavBar/NavBar';
 import SideBar from '../SideBar/SideBar';
 import Button from 'react-bootstrap/Button';
 import './AddService.css';
-import { faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 const AddService = () => {
     const [serviceData, setServiceData] = useState({
         serviceTitle: 'Dry Cleaning',

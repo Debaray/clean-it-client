@@ -30,10 +30,9 @@ const OrderList = () => {
                                 <td>Otto</td>
                                 <td>@mdo</td>
                                 <td><select className="form-control" name="gender">
-                                <option disabled={true} value="Not set">Select Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Not set">Other</option>
+                                <option style={{color:"red"}} value="Pending">Pending</option>
+                                <option style={{color:"yellow"}} value="On Going">On Going</option>
+                                <option style={{color:"green"}} value="Done">Done</option>
                             </select></td>
                             </tr>
                             <tr>
