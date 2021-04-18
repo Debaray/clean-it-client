@@ -1,0 +1,13 @@
+.text-style{
+    font-weight: 100;
+    
+}
+.text-color{
+    color: #3A4256;
+}
+.image-style{
+    transform: translateY(-60px);
+}
+.bg-call{
+    background-color: #d0d2da;
+}

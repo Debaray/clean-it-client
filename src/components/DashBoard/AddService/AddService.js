@@ -3,6 +3,7 @@ import NavBar from '../../Shared/NavBar/NavBar';
 import SideBar from '../SideBar/SideBar';
 import Button from 'react-bootstrap/Button';
 import './AddService.css';
+import { faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 const AddService = () => {
     const [serviceData, setServiceData] = useState({
         serviceTitle: 'Dry Cleaning',
@@ -38,6 +39,7 @@ const AddService = () => {
             .then(response => response.json())
             .then(data => {
                 console.log(data)
+                alert('Congratulations!Your Service added successfully.');
             })
             .catch(error => {
                 console.error(error)
