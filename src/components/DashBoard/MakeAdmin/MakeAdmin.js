@@ -6,7 +6,7 @@ const MakeAdmin = () => {
     const [adminData, setAdminData] = useState({});
     const handleSubmit = e => {
         console.log(adminData);
-        const url = `http://localhost:5000/addAdmin`;
+        const url = `https://whispering-shore-80941.herokuapp.com/addAdmin`;
 
         fetch(url, {
             method: 'POST',

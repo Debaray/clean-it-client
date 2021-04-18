@@ -8,7 +8,7 @@ const OrderList = () => {
     const [showSpin, setShowSpin] = useState(false);
     const [bookingId,setId] = useState('');
     useEffect(() => {
-        const url = `http://localhost:5000/bookings`;
+        const url = `https://whispering-shore-80941.herokuapp.com/bookings`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -18,7 +18,7 @@ const OrderList = () => {
     }, [showSpin])
     const handleChange = e =>{
         const status = e.target.value;
-        fetch(`http://localhost:5000/update/${bookingId}`, {
+        fetch(`https://whispering-shore-80941.herokuapp.com/update/${bookingId}`, {
             method: 'PATCH',
             headers: {'Content-Type': 'application/json'}, 
             body: JSON.stringify({bookingId,status})

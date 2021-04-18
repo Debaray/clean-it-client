@@ -29,7 +29,7 @@ const AddService = () => {
         formData.append('silkSuedeLeathers', serviceData.silkSuedeLeathers);
         formData.append('curtainsDrapery', serviceData.curtainsDrapery);
 
-        const url = `http://localhost:5000/addAService`;
+        const url = `https://whispering-shore-80941.herokuapp.com/addAService`;
 
         fetch(url, {
             method: 'POST',

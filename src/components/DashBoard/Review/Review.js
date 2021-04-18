@@ -8,7 +8,7 @@ const Review = () => {
     });
     const handleSubmit = e => {
         console.log(reviewData);
-        const url = `http://localhost:5000/addReview`;
+        const url = `https://whispering-shore-80941.herokuapp.com/addReview`;
 
         fetch(url, {
             method: 'POST',

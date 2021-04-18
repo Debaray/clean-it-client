@@ -10,7 +10,7 @@ const ManageServices = () => {
     const [servicesData, setServiceData] = useState([]);
     const [showSpin, setShowSpin] = useState(false);
     useEffect(() => {
-        const url = `http://localhost:5000/services`;
+        const url = `https://whispering-shore-80941.herokuapp.com/services`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -19,7 +19,7 @@ const ManageServices = () => {
             })
     }, [showSpin])
     const deleteService = id => {
-        fetch(`http://localhost:5000/deleteService/${id}`, {
+        fetch(`https://whispering-shore-80941.herokuapp.com/deleteService/${id}`, {
             method: 'DELETE'
         })
             .then(res => console.log(res))

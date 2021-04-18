@@ -6,7 +6,7 @@ const Reviews = () => {
     const [reviewsData, setReviewsData] = useState([]);
     const [showSpin, setShowSpin] = useState(false);
     useEffect(() => {
-        const url = `http://localhost:5000/reviews`;
+        const url = `https://whispering-shore-80941.herokuapp.com/reviews`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

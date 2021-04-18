@@ -39,7 +39,7 @@ const BookService = () => {
             status:"Pending",
             orderTime: new Date()
         };
-        fetch('http://localhost:5000/addBooking', {
+        fetch('https://whispering-shore-80941.herokuapp.com/addBooking', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderDetails)
