@@ -1,16 +1,14 @@
-import React, { useContext, useEffect, useState, useHistory } from 'react';
+import React,{ useContext,useEffect,useState } from 'react';
 import NavBar from '../../Shared/NavBar/NavBar';
 import SideBar from '../SideBar/SideBar';
 import { UserContext } from '../../../App';
-import BookService from '../BookService/BookService';
-import OrderList from '../OrderList/OrderList';
 const DashBoard = () => {
     const { loggedUser, selectedService } = useContext(UserContext);
     const [loggedInUser, setLoggedInUser] = loggedUser;
     const [selectService, setSelectService] = selectedService;
     const [isAdmin, setIsAdmin] = useState(false);
     useEffect(() => {
-        fetch('https://whispering-shore-80941.herokuapp.com/isAdmin', {
+        fetch('http://localhost:5000/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -20,8 +18,19 @@ const DashBoard = () => {
     }, [])
     return (
         <div>
-            {!isAdmin && <BookService></BookService>}
-            {isAdmin && <OrderList></OrderList>}
+            <NavBar></NavBar>
+            <div className="row">
+                <div className="col-lg-3">
+                    <SideBar></SideBar>
+                </div>
+                <div className="col-lg-9">
+                    <h1>Welcome to Dashboard</h1>
+                    <h1>Hello , {loggedInUser.name}</h1>
+                    <h1>Please Select Your Any Operation From SideBar</h1>
+                </div>
+            </div>
+
+
         </div>
     );
 };
