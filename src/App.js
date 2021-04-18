@@ -26,8 +26,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export const UserContext = createContext();
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [selectService, setSelectService]= useState({});
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <UserContext.Provider value={{ loggedUser:[loggedInUser, setLoggedInUser], selectedService: [selectService, setSelectService]}}>
       <Router>
       <Switch>
       <Route path="/home">

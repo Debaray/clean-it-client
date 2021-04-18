@@ -7,7 +7,9 @@ import {
 } from "react-router-dom";
 import './NavBar.css';
 const NavBar = () => {
-     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const { loggedUser, selectedService } = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = loggedUser;
+    const [selectService, setSelectService] = selectedService;
     return (
         <div>
            <Navbar className="m-0" collapseOnSelect expand="lg" bg="light" variant="light">

@@ -120,37 +120,37 @@ const AddService = () => {
                                 <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     All Shirts
                                 <hr></hr>
-                                    <input className="col-sm-12 col-md-10 col-lg-10" name="allShirts" required placeholder="1.50$" step=".01" type="number" onChange={handleServicePropertyChange} />
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="allShirts" required placeholder="1.50$" step=".01" min="1" type="number" onChange={handleServicePropertyChange} />
                                 </label>
                                 <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Pants, Jeans, Skirts
                                 <hr></hr>
-                                    <input className="col-sm-12 col-md-10 col-lg-10" name="pantsJeansSkirts" required placeholder="2.50$" step=".01" type="number" onChange={handleServicePropertyChange} />
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="pantsJeansSkirts" required placeholder="2.50$" min="1" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
                                 <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Sweaters
                                 <hr></hr>
-                                    <input className="col-sm-12 col-md-10 col-lg-10" name="sweaters" required placeholder="6.50$" step=".01" type="number" onChange={handleServicePropertyChange} />
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="sweaters" required placeholder="6.50$" min="1" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
                                 <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Tie, Scarf
                                 <hr></hr>
-                                    <input className="col-sm-12 col-md-10 col-lg-10" name="tieScarf" required placeholder="5.50$" step=".01" type="number" onChange={handleServicePropertyChange} />
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="tieScarf" required placeholder="5.50$" min="1" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
                                 <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Coat, Heavy Jacket, Dress
                                 <hr></hr>
-                                    <input className="col-sm-12 col-md-10 col-lg-10" name="coatHeavyJacketDress" placeholder="10.50$" required step=".01" type="number" onChange={handleServicePropertyChange} />
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="coatHeavyJacketDress" placeholder="10.50$" required min="1" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
                                 <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                     Silk, Suede ,Leathers
                                 <hr></hr>
-                                    <input className="col-sm-12 col-md-10 col-lg-10" name="silkSuedeLeathers" placeholder="20.50$" required step=".01" type="number" onChange={handleServicePropertyChange} />
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="silkSuedeLeathers" placeholder="20.50$" required min="1" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
                                 <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
                                 Curtains and Drapery
                                 <hr></hr>
-                                    <input className="col-sm-12 col-md-10 col-lg-10" name="curtainsDrapery" placeholder="40.50$" required step=".01" type="number" onChange={handleServicePropertyChange} />
+                                    <input className="col-sm-12 col-md-10 col-lg-10" name="curtainsDrapery" placeholder="40.50$" required min="1" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
                             </div>
                         </div>

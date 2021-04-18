@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './SideBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faSignOutAlt, faCalendar,faGripHorizontal, faUserPlus, faList,faThLarge,faPlus,faArrowCircleLeft,faListAlt,faCommentAlt } from '@fortawesome/free-solid-svg-icons';
+import {faSignOutAlt, faGripHorizontal, faUserPlus, faList,faThLarge,faPlus,faArrowCircleLeft,faListAlt,faCommentAlt } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
 import './SideBar.css'
 const SideBar = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const { loggedUser, selectedService } = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = loggedUser;
+    const [selectService, setSelectService] = selectedService;
     return (
         <div className="sidebar d-flex flex-column justify-content-between col-md-12 py-5 px-5" style={{ height: "100%" }}>
             <ul className="list-unstyled">
