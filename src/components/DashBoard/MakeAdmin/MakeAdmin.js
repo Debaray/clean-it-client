@@ -35,10 +35,10 @@ const MakeAdmin = () => {
         <div>
             <NavBar></NavBar>
             <div className="row">
-                <div className="col-lg-3 col-md-3">
+                <div className="col-lg-3 col-md-3 col-sm-12">
                     <SideBar></SideBar>
                 </div>
-                <div className="col-lg-9 col-md-9">
+                <div className="col-lg-8 col-md-8 col-sm-12 offset-lg-1 offset-md-1 offset-sm-0">
                     <h3 className="mt-2">Make Admin</h3>
                     <form id="formId" className="mt-3 form-style" onSubmit={handleSubmit}>
                         <div className="row">

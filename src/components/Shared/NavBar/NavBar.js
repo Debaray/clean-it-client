@@ -31,7 +31,7 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ml-auto align-items-lg-center">
-                            <Link className="mr-5 text-style" to="/home">Home</Link>
+                            <Link className="mr-5 text-style" to="/">Home</Link>
                             <Link className="mr-5 text-style" to="/aboutUs">About Us</Link>
                             <Link className="mr-5 text-style" to="/services">Services</Link>
                             <Link className="mr-5 text-style" to="/pricing">Pricing</Link>

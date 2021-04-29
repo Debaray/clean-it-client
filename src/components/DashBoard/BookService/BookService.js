@@ -5,6 +5,7 @@ import { UserContext } from '../../../App';
 import Button from 'react-bootstrap/Button';
 import { Table } from 'react-bootstrap';
 import ProcessPayment from '../ProcessPayment/ProcessPayment';
+
 const BookService = () => {
     const { loggedUser, selectedService } = useContext(UserContext);
     const [loggedInUser, setLoggedInUser] = loggedUser;
@@ -12,7 +13,6 @@ const BookService = () => {
     const [bookServiceData, setBookServiceData] = useState({});
     const [totalBookingServicePrice, setTotalBookingServicePrice] = useState({});
     const [displayPayment, setDisplayPayment] = useState(false);
-
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -36,7 +36,7 @@ const BookService = () => {
             totalPayment: totalBookingServicePrice,
             selectServiceTitle: selectService.title,
             paymentId,
-            status:"Pending",
+            status: "Pending",
             orderTime: new Date()
         };
         fetch('https://whispering-shore-80941.herokuapp.com/addBooking', {
@@ -53,9 +53,9 @@ const BookService = () => {
                     setBookServiceData({});
                     alert('your Booking Placed Successfully');
                 }
-                
+
             })
-            .catch(error =>{console.log(error)})
+            .catch(error => { console.log(error) })
     }
     const handleQtyChange = event => {
         const newBookServiceData = { ...bookServiceData };
@@ -131,12 +131,12 @@ const BookService = () => {
             }
             <NavBar></NavBar>
             <div className="row">
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-md-3 col-sm-12">
                     <SideBar></SideBar>
                 </div>
-                <div className="col-lg-9">
+                <div className="col-lg-8 col-md-8 col-sm-12 offset-lg-1 offset-md-1 offset-sm-0">
                     <h3 className="mt-2">Book Service</h3>
-                    <div>
+                    <div >
                         <div className="row">
                             <input className="col-sm-12 col-md-10 col-lg-10  form-control" name="name" required placeholder="Your Name" defaultValue="Debashis Ray" type="text" readOnly />
                         </div>
@@ -244,6 +244,7 @@ const BookService = () => {
                     </div>}
                 </div>
             </div>
+            
         </div >
     );
 };

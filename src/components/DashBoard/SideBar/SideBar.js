@@ -20,7 +20,7 @@ const SideBar = () => {
             .then(data => setIsAdmin(data));
     }, [])
     return (
-        <div className="sidebar d-flex flex-column justify-content-between col-md-12 py-5 px-5" style={{ height: "100%" }}>
+        <div className="sidebar d-flex flex-column justify-content-between col-md-12 py-5 px-5" style={{ height: "150vh" }}>
             <ul className="list-unstyled">
                 {!isAdmin && <div>
                     <li>

@@ -13,7 +13,7 @@ const AddService = () => {
         tieScarf: 5.50,
         coatHeavyJacketDress: 10.50,
         silkSuedeLeathers: 20.50,
-        curtainsDrapery:40.50
+        curtainsDrapery: 40.50
     });
     const [file, setFile] = useState(null);
     const handleSubmit = e => {
@@ -86,10 +86,10 @@ const AddService = () => {
         <div>
             <NavBar></NavBar>
             <div className="row">
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-md-3 col-sm-12">
                     <SideBar></SideBar>
                 </div>
-                <div className="col-lg-9">
+                <div className="col-lg-8 col-md-8 col-sm-12 offset-lg-1 offset-md-1 offset-sm-0">
                     <h3 className="mt-2">Add Service</h3>
                     <form id="formId" className="mt-3 form-style mb-5" onSubmit={handleSubmit}>
                         <div>
@@ -147,7 +147,7 @@ const AddService = () => {
                                     <input className="col-sm-12 col-md-10 col-lg-10" name="silkSuedeLeathers" placeholder="20.50$" required min="1" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>
                                 <label className="col-sm-12 col-md-6 col-lg-6  text-thickness">
-                                Curtains and Drapery
+                                    Curtains and Drapery
                                 <hr></hr>
                                     <input className="col-sm-12 col-md-10 col-lg-10" name="curtainsDrapery" placeholder="40.50$" required min="1" step=".01" type="number" onChange={handleServicePropertyChange} />
                                 </label>

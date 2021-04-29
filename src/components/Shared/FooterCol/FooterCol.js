@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDotCircle} from '@fortawesome/free-solid-svg-icons';
 const FooterCol = (props) => {
     return (
-        <div className="col-md-4 mt-3">
+        <div className="col-md-4 col-sm-12 mt-3">
             <h6 className="text-style-footer text-white mb-3">{props.menuTitle}</h6>
             <ul className="list-unstyled mt-4">
                 {

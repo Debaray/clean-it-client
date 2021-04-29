@@ -34,10 +34,10 @@ const ManageServices = () => {
         <div>
             <NavBar></NavBar>
             <div className="row">
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-md-3 col-sm-12">
                     <SideBar></SideBar>
                 </div>
-                <div className="col-lg-9">
+                <div className="col-lg-8 col-md-8 col-sm-12 offset-lg-1 offset-md-1 offset-sm-0">
                     <h3 className="mt-2">Manage Services</h3>
                     {!showSpin && <Spinner></Spinner>}
                     {showSpin && <Table className="mt-3" bordered responsive hover size="sm">
@@ -51,15 +51,15 @@ const ManageServices = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {servicesData.map((service,index) =>
+                            {servicesData.map((service, index) =>
 
                                 <tr>
-                                     <td style={{width:'3%'}}>{index+1}</td>
-                                    <td style={{width:'20%'}}>{service.title}</td>
-                                    <td style={{width:'45%'}}>{service.description}</td>
-                                    <td style={{width:'20%'}}>
-                                        <img style={{height:'150px'}} className="img-fluid border" src={`data:image/png;base64,${service.image.img}`} alt="" /></td>
-                                        <td style={{width:'12%'}} className="text-end"><Button variant="danger" onClick={() => deleteService(`${service._id}`)}><FontAwesomeIcon icon={faTrash} /> Delete</Button></td>
+                                    <td style={{ width: '3%' }}>{index + 1}</td>
+                                    <td style={{ width: '20%' }}>{service.title}</td>
+                                    <td style={{ width: '45%' }}>{service.description}</td>
+                                    <td style={{ width: '20%' }}>
+                                        <img style={{ height: '150px' }} className="img-fluid border" src={`data:image/png;base64,${service.image.img}`} alt="" /></td>
+                                    <td style={{ width: '12%' }} className="text-end"><Button variant="danger" onClick={() => deleteService(`${service._id}`)}><FontAwesomeIcon icon={faTrash} /> Delete</Button></td>
                                 </tr>)}
                         </tbody>
                     </Table>}

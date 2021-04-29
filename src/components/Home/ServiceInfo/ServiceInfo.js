@@ -11,7 +11,7 @@ const ServiceInfo = ({ service }) => {
     const [loggedInUser, setLoggedInUser] = loggedUser;
     const [selectService, setSelectService] = selectedService;
     return (
-        <Card className="text-center col-3 mr-5 mt-3 card-style">
+        <Card className="text-center col-lg-3 col-md-4 col-sm-12 mr-5 mt-3 card-style">
             <Link to="/bookService" className="text-dark  link-style" onClick={() =>{
             setSelectService(service)
             }}><Card.Img variant="top" className="img-fluid" style={{ height: '250px' }} src={`data:image/png;base64,${service.image.img}`} />
